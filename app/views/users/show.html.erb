@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @user.id %>
+</p>
+
+<% if false %>
+---The following text are comments:
+@micropost is not defined in the user-controller method(action).
+So first, define an instance variable @micropost in the show action of UsersController.
+The content method is called on @micropost variable which returns the contents of the first post.
+<% end %>
+
+<%- # check if @micropost is nil before displaying it in the view -%>
+<% if @micropost %>
+  <p>
+    <strong>First Post:</strong>
+    <%= @micropost.content %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
